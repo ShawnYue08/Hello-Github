@@ -4,6 +4,11 @@ public class $2_AddTwoNumbers {
         ListNode p = l1, q = l2, current = res;
         int carry = 0; //进位
         int sum = 0;
+	/*
+	两数之和，while(p != null || q != null) 归并两条链表，while(p != null && q != null)
+	两数之和：两条链表某条链表可以为null，值val=0即可，归并两条链表：两条链表每一条都不能为null，否则无法比较，退出while循环时，
+	直接将某条链表链接到res链表上
+	*/
         while(p != null || q != null) {
             int m = p != null ? p.val : 0;
             int n = q != null ? q.val : 0;

@@ -1,6 +1,10 @@
 public class $19_RemoveNthNodeFromEnd {
+  /*
+  删除倒数第n个节点在n有效的情况下，设置一个dummy节点指向head节点，快慢指针同时指向dummy节点，移动快指针指向第n个节点，
+  同时移动fast和slow指针直到fast指向最后一个节点，即fast.next == null，此时slow指向倒数第n个节点的前一个节点，删除slow.next;
+  所以就是slow.next = slow.next.next;返回头节点
+  */
   public ListNode removeNthFromEnd(ListNode head, int n) {
-    //题目中说给定的N是有效的，所以暂不考虑N大于链表长度的情况
     ListNode dummy = new ListNode(-1);
     dummy.next = head;
     ListNode slow = dummy, fast = dummy;

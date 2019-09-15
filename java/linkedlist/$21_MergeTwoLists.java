@@ -1,5 +1,11 @@
 public class MergeTwoLists {
-  //循环
+  /*
+  合并两个链表的套路：递归 + 迭代
+  1、迭代：空间复杂度while(l1 != null && l2 != null) 循环结束时假设某条链表还有剩余元素，cur.next = l1 == null ? l2 : l1;
+  2、递归：时间复杂度if - else if - else 结构
+  */
+  
+  //迭代
   public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
     ListNode res = new ListNode(-1);
     ListNode cur = res;

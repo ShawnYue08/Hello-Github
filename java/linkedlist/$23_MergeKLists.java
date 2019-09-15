@@ -1,4 +1,7 @@
 public class $23_MergeKLists {
+  /*
+  合并K条链表，类似归并排序，
+  */
   public ListNode mergeKLists(ListNode[] lists) {
     if(lists == null || lists.length == 0) { return null; }
     return merge(lists, 0, lists.length - 1);

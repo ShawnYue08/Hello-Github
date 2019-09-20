@@ -1,5 +1,6 @@
 public class 02_RemoveDuplicatesFromSortedArray {
     public int removeDuplicates(int[] nums) {
+        //双指针
         //删除排序数组中的重复值，返回更新后的数组长度
         int slow = 0, fast = 1;
         while(fast < nums.length) {

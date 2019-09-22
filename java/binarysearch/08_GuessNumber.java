@@ -4,7 +4,7 @@ public class 08_GuessNumber {
         //将[1,n]分为根据guess(num)分为两段性，左侧小于pick，右侧大于等于pick
         int i = 1, j = n;
         while(i < j) {
-            int mid = i + (j - i) / 2; // i + j >> 1一直超时
+            int mid = i + (j - i) / 2; // i + j >> 1一直超时，因为i + j有可能整数溢出
             if(guess(mid) > 0) {
                 //pick > mid，所以mid满足左侧性质
                 i = mid + 1;

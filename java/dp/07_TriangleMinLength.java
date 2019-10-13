@@ -8,12 +8,11 @@ public class 07_TriangleMinLength {
             for(int j = 0; j <= i; j++) {
                 //2、只需要对triangle数组的一半进行操作
                 f[i][j] = Integer.MAX_VALUE;
-                //3、左上，对于非第一列的元素，f[i][j]就可以初步确定，是从左上来
+                //3、上一步从左上方向来，只要满足j > 0
                 if(j > 0) {
                     f[i][j] = Math.min(f[i][j], f[i-1][j-1] + triangle.get(i).get(j)); 
                 }
-                //4、右上，对于对角线元素，在上一个if条件中已经初始化好，但是第一列需要赋值
-                //5、对于非第一列，非对角线元素，都是需要进行两次比较的
+                //4、上一步从右上方向来，只要满足j < i，对角线的左下侧，不包含对角线部分
                 if(j < i) {
                     f[i][j] = Math.min(f[i][j], f[i-1][j] + triangle.get(i).get(j));
                 }

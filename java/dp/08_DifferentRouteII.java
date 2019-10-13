@@ -6,7 +6,7 @@ public class 08_DifferentRouteII {
         int[][] f = new int[n][m];
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < m; j++) {
-                //2、如果有障碍物，那么就跳过，则此路不同，f[i][j]还是0，并且影响了后面的f[i][j++]
+                //2、如果有障碍物，那么就跳过本次循环（执行j++），则此路不通，f[i][j]还是0，并且影响了后面的f[i][j++]
                 if(array[i][j] == 1) continue;
                 if(i == 0 && j == 0) f[i][j] = 1;
                 if(i > 0) {

@@ -1,15 +1,12 @@
 public class 03_BestTimeToBuyAndSell {
     public int maxProfit(int[] prices) {
-        //第i天的收益=第i天的价格-前i天的最小价格minPrice
-        int minPrice = Integer.MAX_VALUE;
+        if(prices.length == 0) return 0;
+        int minPrice = prices[0];
         int maxProfit = 0;
-        for(int price : prices) {
-            if(price < minPrice) {
-                minPrice = price; 
-                //minPrice记录最小价格
-            } else if(price - minPrice > maxProfit) {
-                maxProfit = price - minPrice;
-            }
+        for(int i = 0; i < prices.length; i++) {
+            maxProfit = Math.max(maxProfit, prices[i] - minPrice); 
+            //最大收益需要和前i次的最小价格比较,然后才可以更新MinPrice
+            minPrice = Math.min(minPrice, prices[i]);            
         }
         return maxProfit;
     }

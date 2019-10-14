@@ -29,3 +29,25 @@ public class HouseRobberI {
     }
     
 }
+
+//房屋为一个圈，nums[0]和nums[n-1]不能同时偷
+class HouseRooberII {
+    public int rob(int[] nums) {
+        //max(选择偷第一个的最大值nums[0,...n-2],选择偷最后一个的最大值nums[1,...n-1]) 
+        if(nums.length == 0) return 0;
+        else if(nums.length == 1) return nums[0];
+        int n = nums.length;
+        int[] f = new int[n], g = new int[n];
+        f[1] = nums[0];
+        for(int i = 2; i < n; i++) {
+            //偷第一个的最大值
+            f[i] = Math.max(f[i-1], f[i-2] + nums[i-1]);
+        }
+        g[1] = nums[1];
+        for(int j = 2; j < n; j++) {
+            //偷最后一个的最大值
+            g[j] = Math.max(g[j-1], g[j-2] + nums[j]);
+        }
+        return Math.max(f[n-1], g[n-1]);
+    }
+}

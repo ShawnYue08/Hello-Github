@@ -1,5 +1,5 @@
 /*
-sumRange()实现数组nums[i,j]的数之和，动态规划，数组sums[i]记录nums前i个数之和
+sumRange()实现数组nums[i]到nums[j]的数之和，动态规划，数组sums[i]记录nums前i个数之和
 */
 class NumArray {
     int[] sums;

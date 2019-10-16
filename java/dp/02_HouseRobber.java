@@ -1,4 +1,6 @@
 //相邻的房屋不能偷，会触动报警装置
+
+//一维数组的打家劫舍
 public class HouseRobberI {
     
     public int houseRoober(int[] nums) {
@@ -6,7 +8,7 @@ public class HouseRobberI {
         if(nums.length == 0) return 0;
         int n = nums.length;
         int[] f = new int[n+1];
-        f[1] = nums[0];
+        f[1] = nums[0]; //如果nums.length == 0，会报异常。
         for(int i = 2; i <= n; i++) {
             f[i] = Math.max(f[i-1], f[i-2] + nums[i-1]);
         }
@@ -31,6 +33,8 @@ public class HouseRobberI {
 }
 
 //房屋为一个圈，nums[0]和nums[n-1]不能同时偷
+
+//一维循环队列的打家劫舍
 class HouseRooberII {
     public int rob(int[] nums) {
         //max(选择偷第一个的最大值nums[0,...n-2],选择偷最后一个的最大值nums[1,...n-1]) 

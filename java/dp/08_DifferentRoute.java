@@ -1,14 +1,16 @@
 //不同路径I：没有障碍物的情况
 public class DifferentRouteI {
     public int uniquePaths(int m, int n) {
+        //f[i][j]代表从起点到(i,j)位置的路径个数 
+        //到达(i,j)位置：1、从上面下来;2、从左侧过来
+        //f[i][j] = f[i-1][j] + f[i][j-1]
         int[][] f = new int[m][n];
         f[0][0] = 1;
         for(int i = 0; i < m; i++) 
             for(int j = 0; j < n; j++) {
-                //从上方下来
                 if(i > 0)
                     f[i][j] += f[i-1][j];
-                //从左侧过来
+                
                 if(j > 0)
                     f[i][j] += f[i][j-1];
             }

@@ -6,6 +6,8 @@ public class DifferentRouteI {
         //f[i][j] = f[i-1][j] + f[i][j-1]
         int[][] f = new int[m][n];
         f[0][0] = 1; //因为没有障碍物的存在，f[0][0]可以直接赋值为1，有一条路径，如果有障碍物存在时，需要先检查是否需要跳过。
+        
+        //枚举二维数组
         for(int i = 0; i < m; i++) 
             for(int j = 0; j < n; j++) {
                 if(i > 0)
@@ -24,6 +26,8 @@ public class 08_DifferentRouteII {
         int n = array.length;
         int m = array[0].length;
         int[][] f = new int[n][m];
+        
+        //枚举二维数组
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < m; j++) {
                 //2、如果有障碍物，那么就跳过本次循环（执行j++），则此路不通，f[i][j]还是0，并且影响了后面的f[i][j++]

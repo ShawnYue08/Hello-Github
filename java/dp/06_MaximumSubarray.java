@@ -15,7 +15,8 @@ public class 06_MaximumSubarray {
     }
     //进阶版
     public int maxSubarray(int[] nums) {
-        //f[i]代表以i结尾的子段，就是子序必须包含nums[i]，当然了，以i结尾的子序，最大和不一定就要包含nums[i]，所以res = max(res, now)
+        //f[i]代表以i结尾的子序的最大子序和，与f[i]有关，就是子序必须包含nums[i]
+        //1 2 -1   f[0] = 1, f[1] = 3, f[2] = 2, res = max(f[0], f[1], ...f[n-1])
         int res = Integer.MIN_VALUE;
         int last = 0;
         for(int i = 0; i < nums.length; i++) {

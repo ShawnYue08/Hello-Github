@@ -20,6 +20,6 @@ public class 01_AddTwoNumbers {
             //两数之和的最大进位为1
             cur.next = new ListNode(1);
         }
-        return dummy.next; //返回第一个有效节点
+        return dummy.next;
     }
 }

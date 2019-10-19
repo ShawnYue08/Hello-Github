@@ -1,4 +1,4 @@
-public class $2_AddTwoNumbers {
+public class 01_AddTwoNumbers {
 	public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode dummy = new ListNode(0);
         ListNode cur = dummy, p1 = l1, p2 = l2;

@@ -17,9 +17,9 @@ public class 01_AddTwoNumbers {
             cur = cur.next;
         }
         if(sum == 1) {
-            //两数之和，进位最大是1吧，在循环的末尾已经sum /= 10
+            //两数之和的最大进位为1
             cur.next = new ListNode(1);
         }
-        return dummy.next; //返回结果的第一个节点
+        return dummy.next; //返回第一个有效节点
     }
 }
